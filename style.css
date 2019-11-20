@@ -1,81 +1,87 @@
-*, *::before, *::after {
-  box-shadow: border-box;  
+:root {
+  background-color: white;
+  font-size: 10px;
 }
 
-:root{
-  --background: #76b4bd;
-  --wrong: #ee4035;
-  --correct: #7bc043;
-}
-
-body{
-  padding: 0;
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 5.4rem;
+  color: blue;
+  margin-bottom: 5rem;
+}
+
+.container {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background);
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
-header{
-  font-size: 30px;
-  position: absolute;
-  margin-top: 20px;
-  top: 0;
-  font-weight: bold;
+.container > * {
+  width: 100%;
 }
 
-body.correct{
-  background-color: var(--correct);
-  color: black;
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
-body.wrong{
-  background-color: var(--wrong);
+.flex-center {
+  justify-content: center;
+  align-items: center;
 }
 
-.container{
-  width: 800px;
-  max-width: 80%;
-  background-color: #2ea1bb;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px 2px;
+.justify-center {
+  justify-content: center;
 }
 
-.btn-grid{
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 10px;
-  margin: 20px 0;
+.text-center {
+  text-align: center;
 }
 
-.btn{
-  font-size: 1em;
-  border: 2px solid black;
+.hidden {
+  display: none;
+}
+
+/* BUTTONS */
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  width: 20rem;
+  text-align: center;
+  border: 0.1rem solid blue;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: blue;
   background-color: white;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: black;
-  outline: none;
 }
 
-.btn:hover{
-  border-color: rgb(209, 93, 93);
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
 }
 
-.btn.correct{
-  background-color: var(--correct);
-}
-
-.btn.wrong{
-  background-color: var(--wrong);
-}
-
-.start-btn, .next-btn{
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px 20px; 
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }

@@ -3,7 +3,7 @@ const choices = Array.from
 (document.getElementsByClassName("choice-text"));
 
 let currentQue = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQue = [];
@@ -57,6 +57,24 @@ const max_que = 3;
       choice.innerText = currentQue["choice" + number];
     });
 
+    availableQue.splice(questionIndex, 1);
+
+    acceptingAnswers = true;
+
   }
+
+  choices.forEach(choice => {
+    choice.addEventListener("click", e => {
+      if(!acceptingAnswers) return;
+
+      acceptingAnswers = false;
+
+      const selectedChoice = e.target;
+      const selectedAnswer = selectedChoice.dataset["number"];
+      getNewQue();
+    });
+  })
+
+  
 
 startGame();

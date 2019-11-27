@@ -31,3 +31,8 @@
 .incorrect{
   background-color: red;
 }
+
+.question-score-container{
+  display: flex;
+  justify-content: space-around;
+}

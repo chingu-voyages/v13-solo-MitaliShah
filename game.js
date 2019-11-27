@@ -1,6 +1,8 @@
 const question = document.getElementById("question");
 const choices = Array.from
 (document.getElementsByClassName("choice-text"));
+const displayQueCount = document.getElementById("displayQueCount");
+const displayScore = document.getElementById("displayScore");
 
 let currentQue = {};
 let acceptingAnswers = false;
@@ -54,6 +56,8 @@ const max_que = 3;
 
     questionCounter++;
 
+    displayQueCount.innerText = `${questionCounter}/${max_que}`;
+
     const questionIndex = Math.floor(Math.random() * availableQue.length);
     currentQue = availableQue[questionIndex];
     question.innerText = currentQue.question;
@@ -82,6 +86,10 @@ const max_que = 3;
 
       const classToApply = selectedAnswer == currentQue.answer ? "correct" : "incorrect";
 
+      if(classToApply === "correct"){
+        incrementScore(correct_bonus);
+      } 
+
       selectedChoice.parentElement.classList.add(classToApply);      
 
       setTimeout(() => {
@@ -92,6 +100,11 @@ const max_que = 3;
       
     });
   })
+
+  incrementScore = num =>{
+    score += num;
+    displayScore.innerText = score;
+  }
 
   
 

@@ -1,6 +1,7 @@
 :root {
   background-color: white;
   font-size: 10px;
+  background: linear-gradient(#CAFAFE, #9198e5);
 }
 
 * {
@@ -32,7 +33,7 @@ h1 {
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem;  
 }
 
 .container > * {

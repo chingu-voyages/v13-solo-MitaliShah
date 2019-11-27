@@ -42,25 +42,31 @@ const max_que = 3;
     questionCounter = 0;
     score = 0;
     availableQue = [...questions];
-    console.log(availableQue);
+    // console.log(availableQue);
     getNewQue();
   }
 
   getNewQue = () => {
-    questionCounter++;    
+
+    if(availableQue.length === 0 || questionCounter >= max_que){
+      return window.location.assign("/end.html");
+    }
+
+    questionCounter++;
+
     const questionIndex = Math.floor(Math.random() * availableQue.length);
     currentQue = availableQue[questionIndex];
     question.innerText = currentQue.question;
 
     choices.forEach( choice => {
-      const number = choice.dataset['number'];
+      const number = choice.dataset["number"];
       choice.innerText = currentQue["choice" + number];
     });
 
     availableQue.splice(questionIndex, 1);
 
     acceptingAnswers = true;
-
+    
   }
 
   choices.forEach(choice => {
@@ -71,7 +77,19 @@ const max_que = 3;
 
       const selectedChoice = e.target;
       const selectedAnswer = selectedChoice.dataset["number"];
-      getNewQue();
+      
+      // console.log(selectedAnswer == currentQue.answer);
+
+      const classToApply = selectedAnswer == currentQue.answer ? "correct" : "incorrect";
+
+      selectedChoice.parentElement.classList.add(classToApply);      
+
+      setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);     
+        getNewQue();   
+      }, 500);
+
+      
     });
   })
 

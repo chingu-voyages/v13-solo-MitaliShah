@@ -3,25 +3,27 @@
   margin-bottom: 0.5rem;
   width: 100%;
   font-size: 1.8rem;
-  border: 0.1rem solid blue;
-  background-color: white;
+  border: 0.1rem solid grey;
+  background-color: white;  
 }
 
 .choice-container:hover{
   cursor: pointer;
-  box-shadow: 0 0.1rem 0.01rem blue;
+  box-shadow: 0 0.1rem 0.01rem royalblue;
   transform: translatex(-0.1rem);
   transition: transform 100ms;
 }
 
 .choice-prefix{
-  padding: 1.5rem 2.5rem;
-  background-color: blue;
+  padding: 2.5rem 3.5rem;
+  background-color: royalblue;
   color: white;
 }
 
 .choice-text{
-  padding: 1.5rem;
+  padding: 2.5rem 2.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .correct{
@@ -34,5 +36,10 @@
 
 .question-score-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+#displayQueCount, #displayScore{
+  font-size: 3.5em;
+  color: royalblue;
 }

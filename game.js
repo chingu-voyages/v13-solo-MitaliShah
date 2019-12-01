@@ -59,6 +59,7 @@ const max_que = 3;
     displayQueCount.innerText = `${questionCounter}/${max_que}`;
 
     const questionIndex = Math.floor(Math.random() * availableQue.length);
+
     currentQue = availableQue[questionIndex];
     question.innerText = currentQue.question;
 
@@ -88,14 +89,16 @@ const max_que = 3;
 
       if(classToApply === "correct"){
         incrementScore(correct_bonus);
-      } 
+      } else{
+        incrementScore(0);
+      }
 
       selectedChoice.parentElement.classList.add(classToApply);      
 
       setTimeout(() => {
         selectedChoice.parentElement.classList.remove(classToApply);     
         getNewQue();   
-      }, 500);
+      }, 1000);
 
       
     });

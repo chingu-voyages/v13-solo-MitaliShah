@@ -9,18 +9,22 @@
 
 .choice-container:hover{
   cursor: pointer;
-  box-shadow: 0 0.1rem 0.01rem royalblue;
-  transform: translatex(-0.1rem);
+  box-shadow: 0 0.1rem 0.01rem #FF0000;
+  transform: translatex(-0.2rem);
   transition: transform 100ms;
 }
 
 .choice-prefix{
   padding: 2.5rem 3.5rem;
-  background-color: royalblue;
+  background-color: rgb(83, 84, 87);
   color: white;
+  border-right: 1px solid #FF0000;
+  border-radius: 1px;
 }
 
 .choice-text{
+  color: darkgrey;
+  font-weight: bolder;
   padding: 2.5rem 2.5rem;
   display: flex;
   align-items: center;

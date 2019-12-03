@@ -11,6 +11,17 @@
   <div class="container">
     <div id="end" class="flex-center flex-column">
       <h1 id="finalScore">final score is 0</h1>
+      <form>
+        <input 
+          type="text" 
+          name="displayname" 
+          id="displayname" 
+          placeholder="Enter Display Name"
+        />
+        <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)">save</button>
+      </form>
+      <a class="btn" href="./game.html">Play again</a>
+      <a class="btn" href="./index.html">Go to homepage</a>
     </div>
   </div>
   <script src="./end.js"></script>

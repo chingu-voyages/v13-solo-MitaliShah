@@ -9,7 +9,10 @@ This project is part of Chingu's Voyage 13 cohort.
 - Display hard coded questions on the game page.
 - Display feedback on correct/incorrect answers
 - Save highscores in local storage
-- 
+
+# To Do
+
+- Display High scores on the highscore page
 
 # Built with
 - Html
@@ -18,7 +21,7 @@ This project is part of Chingu's Voyage 13 cohort.
 
 # Project Link
 
-Click [here]() to view the live page
+Click [here](https://chingu-voyages.github.io/v13-solo-MitaliShah) to view the live page.
 
 
 

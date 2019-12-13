@@ -52,7 +52,7 @@ const max_que = 3;
 
     if(availableQue.length === 0 || questionCounter >= max_que){
       localStorage.setItem("mostRecentScore", score);
-      return window.location.assign("/end.html");
+      return window.location.assign('../end/end.html');  
     }
 
     questionCounter++;

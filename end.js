@@ -18,7 +18,7 @@ saveHighScore = (e) => {
   e.preventDefault();
 
   const score = {
-    score: mostRecentScore,
+    score: Math.floor(Math.random()*100),
     name: displayname.value
   };
   highScores.push(score);
@@ -29,5 +29,5 @@ saveHighScore = (e) => {
   highScores.splice(5);
   
   localStorage.setItem('highScore', JSON.stringify(highScores));
-  window.location.assign('/');
+  window.location.assign('/index.html');
 }
